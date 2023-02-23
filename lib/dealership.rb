@@ -25,4 +25,17 @@ class Dealership
             car.make == make
         end
     end
+
+    def total_value
+        @inventory.sum do |car|
+            car.loan_length * car.monthly_payment
+        end
+    end
+
+    def details
+        {
+            'address' => @address,
+            'total_value' => total_value
+        }
+    end
 end
