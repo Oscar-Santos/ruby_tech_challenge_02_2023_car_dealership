@@ -23,6 +23,7 @@ class Dealership
     def cars_by_make(make)
         @inventory.find_all do |car|
             car.make == make
+            
         end
     end
 
@@ -43,5 +44,13 @@ class Dealership
         @inventory.sort_by do |car|
             car.monthly_payment * car.loan_length
         end.reverse
+    end
+
+    def inventory_hash
+        result = {}
+        @inventory.each do |car|
+            result[car.make] = cars_by_make(car.make)
+        end
+        result
     end
 end
