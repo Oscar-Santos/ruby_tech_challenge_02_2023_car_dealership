@@ -96,7 +96,7 @@ RSpec.describe Dealership do
       expect(dealership.cars_sorted_by_price).to eq([car_1, car_2, car_4, car_3])
      end
 
-     it 'has an inventory has' do
+     it 'has an inventory hash' do
       dealership = Dealership.new("Acme Auto", "123 Main Street")
 
       car_1 = Car.new("Ford Mustang", 1500, 36)
