@@ -38,4 +38,10 @@ class Dealership
             'total_value' => total_value
         }
     end
+
+    def cars_sorted_by_price
+        @inventory.sort_by do |car|
+            car.monthly_payment * car.loan_length
+        end.reverse
+    end
 end
